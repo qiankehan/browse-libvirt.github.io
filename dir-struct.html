@@ -1,0 +1,308 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Directory Structure · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="how-build-libvirt.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="what-is-libvirt.html">
+            
+                <a href="what-is-libvirt.html">
+            
+                    
+                    What is Libvirt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="how-build-libvirt.html">
+            
+                <a href="how-build-libvirt.html">
+            
+                    
+                    How to Build Libvirt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="dir-struct.html">
+            
+                <a href="dir-struct.html">
+            
+                    
+                    Directory Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Directory Structure</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#directory-structure">Directory Structure</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#schema">schema</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="directory-structure">Directory Structure</h1>
+<p>Check libvirt code directory after download. There are following sub-directory 
+in libvirt root directory:</p>
+<ul>
+<li><strong>build-aux</strong>: The <a href="https://www.gnu.org/software/autoconf/" target="_blank">autoconf</a> auxiliary directory.</li>
+<li><strong>docs</strong>: Include the documents of libvirt and libvirt <a href="https://relaxng.org/" target="_blank">relax-ng</a> 
+schema. The former could be seen on <a href="https://libvirt.org/" target="_blank">libvirt org site</a>.
+The later is used for libvirt xml validation, such as <a href="https://linux.die.net/man/1/virt-xml-validate" target="_blank">virt-xml-validate</a>.</li>
+<li><strong>example</strong>: This directory contains libvirt API usage examples.</li>
+<li><strong>gnulib</strong>: <a href="https://www.gnu.org/software/gnulib/" target="_blank">The GNU Portability Library</a>. 
+A library that libvirt relies on.</li>
+<li><strong>include</strong>: Libvirt public header files.</li>
+<li><strong>m4</strong>: <a href="https://www.gnu.org/software/m4/" target="_blank">GNU M4</a>, a Unix macro processor, is a 
+dependency of GNU autoconf.</li>
+<li><strong>po</strong>: <a href="https://en.wikipedia.org/wiki/Gettext" target="_blank">GetText</a> related files, they are 
+used for <a href="https://en.wikipedia.org/wiki/Internationalization_and_localization" target="_blank">internationalization and localization</a>.</li>
+<li><strong>src</strong>: The libvirt core library codes.</li>
+<li><strong>tests</strong>: Libvirt unit test files.</li>
+<li><strong>tools</strong>: The codes libvirt supplementary programs, such as <a href="https://linux.die.net/man/1/virsh" target="_blank">virsh</a>, 
+virsh shell completion, 
+<a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/sub-sect-shutting_down_rebooting_and_force_shutdown_of_a_guest_virtual_machine-manipulating_the_libvirt_guests_configuration_settings" target="_blank">libvirt-guests service</a>, 
+<a href="https://github.com/libvirt/libvirt/tree/master/tools/wireshark" target="_blank">libvirt wireshark dissector</a>, 
+<a href="https://wiki.libvirt.org/page/NSS_module" target="_blank">libvirt-nss</a>, 
+<a href="https://www.systutorials.com/docs/linux/man/1-virt-admin/" target="_blank">virt-admin</a>, 
+<a href="https://manpages.ubuntu.com/manpages/trusty/man1/virt-login-shell.1.html" target="_blank">virt-login-shell</a>, 
+<a href="https://linux.die.net/man/1/virt-host-validate" target="_blank">virt-host-validate</a>, 
+<a href="https://linux.die.net/man/1/virt-pki-validate" target="_blank">virt-pki-validate</a>, 
+<a href="https://linux.die.net/man/1/virt-xml-validate" target="_blank">virt-xml-validate</a>, 
+<a href="https://linux.die.net/man/8/virt-sanlock-cleanup" target="_blank">virt-sanlock-cleanup</a>.</li>
+</ul>
+<h2 id="schema">schema</h2>
+<p>Libvirt use xml to record or manage resources, including <strong>domain</strong>, 
+<strong>domain snapshot</strong>, <strong>nodedev</strong>, <strong>secret</strong>, <strong>storagevol</strong>, <strong>capability</strong>, 
+<strong>interface</strong>, <strong>nwfilter</strong>, <strong>nwfilterbinding</strong>, <strong>network</strong>.<br>The relax-ng schema files define the format of libvirt xml</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="how-build-libvirt.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: How to Build Libvirt">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Directory Structure","level":"1.4","depth":1,"previous":{"title":"How to Build Libvirt","level":"1.3","depth":1,"path":"how-build-libvirt.md","ref":"./how-build-libvirt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.x.x","theme":"default","variables":{},"plugins":["dot","page-treeview"],"pluginsConfig":{"dot":{"args":["-x"],"bin":"/usr/bin/dot"},"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dir-struct.md","mtime":"2019-07-31T09:57:07.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-31T09:58:07.901Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

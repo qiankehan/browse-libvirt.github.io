@@ -1,0 +1,352 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>How to Build Libvirt · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="dir-struct.html" />
+    
+    
+    <link rel="prev" href="what-is-libvirt.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="what-is-libvirt.html">
+            
+                <a href="what-is-libvirt.html">
+            
+                    
+                    What is Libvirt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="how-build-libvirt.html">
+            
+                <a href="how-build-libvirt.html">
+            
+                    
+                    How to Build Libvirt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="dir-struct.html">
+            
+                <a href="dir-struct.html">
+            
+                    
+                    Directory Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >How to Build Libvirt</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#how-to-build-libvirt">How to build libvirt</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#install-dependencies">Install dependencies</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#for-fedoracentos">For Fedora/Centos</a><i></i></div></li>
+<li><div><a href="#for-debianubuntu">For Debian/Ubuntu</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#download-the-code">Download the code</a><i></i></div></li>
+<li><div><a href="#configuration">Configuration</a><i></i></div></li>
+<li><div><a href="#make">Make</a><i></i></div></li>
+<li><div><a href="#installation">Installation</a><i></i></div></li>
+<li><div><a href="#build-by-build-system-of-distributions">Build by build system of distributions</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="how-to-build-libvirt">How to build libvirt</h1>
+<h2 id="install-dependencies">Install dependencies</h2>
+<p>Make <em>source repository</em> is configurated.  </p>
+<h3 id="for-fedoracentos">For Fedora/Centos</h3>
+<p>Install dependencies via <em>dnf builddep</em>:</p>
+<pre><code class="lang-sh">dnf builddep libvirt -y
+</code></pre>
+<p>For earlier fedora/centos, install <em>yum-utils</em> first and then install 
+dependencies via <em>yum-builddep</em>:</p>
+<pre><code class="lang-sh">yum install yum-utils -y &amp;&amp; yum-builddep libvirt -y
+</code></pre>
+<h3 id="for-debianubuntu">For Debian/Ubuntu</h3>
+<p>Install dependencies by <em>apt build-dep</em>:</p>
+<pre><code class="lang-sh">apt build-dep libvirt0 -y
+</code></pre>
+<h2 id="download-the-code">Download the code</h2>
+<p>According to <a href="https://libvirt.org/downloads.html" target="_blank">libvirt download page</a>, 
+download your preferred libvirt version at <a href="https://libvirt.org/sources/" target="_blank">https://libvirt.org/sources/</a> . Or 
+download libvirt source via git:</p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> git://libvirt.org/libvirt.git
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>Libvirt is built by 
+<a href="https://en.wikipedia.org/wiki/GNU_Build_System" target="_blank">GNU build system</a>.</p>
+<ol>
+<li>Change to libvirt source directory.</li>
+<li>Generate automake/autoconf scripts: <code>./autogen.sh</code></li>
+<li>Run <code>configure</code> script to finish configuration before compilation: 
+<code>./configure</code><br>To use customized configuration options, run <code>./configure --help</code> to get all 
+the configuration options and influential environment variables.</li>
+</ol>
+<h2 id="make">Make</h2>
+<p>Build libvirt by <a href="https://en.wikipedia.org/wiki/Make_%28software%29" target="_blank">make</a>. Run 
+<em>make</em> command by your purpose:</p>
+<ul>
+<li>build libvirt project: <code>make</code></li>
+<li>check the code syntax only: <code>make syntax-check</code></li>
+<li>build libvirt and run unit tests: <code>make check</code></li>
+<li>build libvirt and its rpm packages <code>make rpm</code></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>For rpm target files, install and uninstall them by <em>rpm</em>. The rpm files are in 
+<strong>~/rpmbuild/RPMS/x86_64/</strong>.<br>To install target files by make, run <code>sudo make install</code> in the code directory. 
+To uninstall them, run <code>sudo make uninstall</code>.</p>
+<h2 id="build-by-build-system-of-distributions">Build by build system of distributions</h2>
+<p>Different linux distributions integrate the above processes into their build 
+script and build libvirt by their build system. The following is the build script 
+and build system of major linux distributions.</p>
+<ul>
+<li>rhel/centos/fedora: build processes defined by 
+<a href="http://ftp.rpm.org/max-rpm/s1-rpm-inside-scripts.html" target="_blank">spec file</a> and built by 
+<a href="https://linux.die.net/man/8/rpmbuild" target="_blank">rpmbuild</a></li>
+<li>debian/ubuntu: build processes defined by 
+<a href="https://www.debian.org/doc/manuals/maint-guide/dreq.en.html" target="_blank">control and rules file</a>, 
+built by <a href="https://wiki.debian.org/BuildingTutorial" target="_blank">debuild</a></li>
+<li>arch linux: build processes defined by 
+<a href="https://wiki.archlinux.org/index.php/PKGBUILD" target="_blank">PKGBUILD file</a> and built by 
+<a href="https://github.com/archlinux/asp" target="_blank">asp</a></li>
+<li>gentoo linux: build processes defined by 
+<a href="https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds" target="_blank">ebuild file</a> 
+and built by
+<a href="https://dev.gentoo.org/~zmedico/portage/doc/man/ebuild.1.html" target="_blank">ebuild</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="what-is-libvirt.html" class="navigation navigation-prev " aria-label="Previous page: What is Libvirt">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="dir-struct.html" class="navigation navigation-next " aria-label="Next page: Directory Structure">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"How to Build Libvirt","level":"1.3","depth":1,"next":{"title":"Directory Structure","level":"1.4","depth":1,"path":"dir-struct.md","ref":"./dir-struct.md","articles":[]},"previous":{"title":"What is Libvirt","level":"1.2","depth":1,"path":"what-is-libvirt.md","ref":"./what-is-libvirt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.x.x","theme":"default","variables":{},"plugins":["dot","page-treeview"],"pluginsConfig":{"dot":{"args":["-x"],"bin":"/usr/bin/dot"},"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"how-build-libvirt.md","mtime":"2019-07-31T09:57:07.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-31T09:58:07.901Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

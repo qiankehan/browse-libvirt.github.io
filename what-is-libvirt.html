@@ -1,0 +1,405 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>What is Libvirt · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="how-build-libvirt.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="what-is-libvirt.html">
+            
+                <a href="what-is-libvirt.html">
+            
+                    
+                    What is Libvirt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="how-build-libvirt.html">
+            
+                <a href="how-build-libvirt.html">
+            
+                    
+                    How to Build Libvirt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="dir-struct.html">
+            
+                <a href="dir-struct.html">
+            
+                    
+                    Directory Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >What is Libvirt</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#what-is-libvirt">What is libvirt</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#what-libvirt-can-do">What libvirt can do</a><i></i></div></li>
+<li><div><a href="#preparation-to-review-the-code">Preparation to review the code</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#download-the-code">Download the code</a><i></i></div></li>
+<li><div><a href="#learn-git">Learn git</a><i></i></div></li>
+<li><div><a href="#git-log">git log</a><i></i></div></li>
+<li><div><a href="#git-tag">git tag</a><i></i></div></li>
+<li><div><a href="#git-show">git show</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#vim-plugins">vim plugins</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#fugitivevim">fugitive.vim</a><i></i></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="what-is-libvirt">What is libvirt</h1>
+<p><a href="https://libvirt.org/" target="_blank">Libvirt</a> is a toolkit to manage virtualization platforms.</p>
+<h2 id="what-libvirt-can-do">What libvirt can do</h2>
+<ul>
+<li>Manage virtualization hypervisors: 
+<a href="https://libvirt.org/drvqemu.html" target="_blank">QEMU/KVM</a>, 
+<a href="https://libvirt.org/drvxen.html" target="_blank">Xen</a>, 
+<a href="https://libvirt.org/drvvirtuozzo.html" target="_blank">Virtuozzo</a>, 
+<a href="https://libvirt.org/drvopenvz.html" target="_blank">OpenVZ</a>, 
+<a href="https://libvirt.org/drvesx.html" target="_blank">VMWare ESX</a>, 
+<a href="https://libvirt.org/drvvmware.html" target="_blank">VMware Workstation/Player/Fusion</a>, 
+<a href="https://libvirt.org/drvvbox.html" target="_blank">VirtualBox</a>, 
+<a href="https://libvirt.org/drvlxc.html" target="_blank">LXC</a>, 
+<a href="https://libvirt.org/drvbhyve.html" target="_blank">BHyve</a>, 
+<a href="https://libvirt.org/drvphyp.html" target="_blank">IBM PowerVM</a>, 
+<a href="https://libvirt.org/drvhyperv.html" target="_blank">Microsoft Hyper-V</a></li>
+<li>Manage host resources: 
+<a href="https://libvirt.org/storage.html" target="_blank">storages</a>, 
+<a href="https://libvirt.org/formatnetwork.html" target="_blank">networks</a>, 
+<a href="https://libvirt.org/drvnodedev.html" target="_blank">host node devices</a>, 
+<a href="https://libvirt.org/formatnwfilter.html" target="_blank">network filters</a>, 
+<a href="https://libvirt.org/devhelp/libvirt-libvirt-interface.html" target="_blank">host interfaces</a></li>
+</ul>
+<h2 id="preparation-to-review-the-code">Preparation to review the code</h2>
+<h3 id="download-the-code">Download the code</h3>
+<p>Use <strong>git</strong> to download <a href="https://libvirt.org/downloads.html#git" target="_blank">libvirt source code</a>.  </p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> git://libvirt.org/libvirt.git
+</code></pre>
+<h3 id="learn-git">Learn git</h3>
+<p>Git is powerful version-control system for tracking changes in source code. 
+The following git sub-commands are useful for browsing the code.</p>
+<h3 id="git-log">git log</h3>
+<p>Git log is to show the commits history of the source code.<br>Run it directly in the source code directory then get the commits from the last to the first:</p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">log</span>
+</code></pre>
+<p>By format strings, you can set the format of commits log. <a href="https://devhints.io/git-log-format" target="_blank">This link</a> 
+gives the full format or git log.
+For example, see the <em>commit hash</em>, <em>author</em>, <em>author date</em>, <em>commit subject</em>:</p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">log</span> --pretty=<span class="hljs-string">&quot;format:%H %an %aD %s&quot;</span>
+</code></pre>
+<p>And it can get the commits from one to another:</p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">log</span> COMMIT1..COMMIT2
+</code></pre>
+<p>By using tags, you can find the commits during two versions. For example, the 
+following command will show the commits between version v4.5.0 to v4.6.0 :</p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">log</span> v4.5.0..v4.6.0
+</code></pre>
+<p>Man page: <a href="https://git-scm.com/docs/git-log" target="_blank">git log</a></p>
+<h3 id="git-tag">git tag</h3>
+<p><strong>Tags</strong> are ref&apos;s that point to specific points in <strong>Git</strong> history.  Tagging is generally 
+used to capture a point in history that is used for a <strong>marked version release</strong> (i.e. v1.0.1).<br>Run as following in source code dir to show all the tags:</p>
+<pre><code class="lang-sh">git tag
+</code></pre>
+<p><strong>--contains</strong> is to show which tags contains a specific commit:</p>
+<pre><code class="lang-sh">git tag --contains COMMIT
+</code></pre>
+<p>Man page: <a href="https://git-scm.com/docs/git-tag" target="_blank">git tag</a></p>
+<h3 id="git-show">git show</h3>
+<p><strong>Git show</strong> can check the detailed changes of commits.<br>To show the latest code change of a commit:</p>
+<pre><code class="lang-sh">git show
+</code></pre>
+<p>Show code change of specific commit:</p>
+<p>Man page: <a href="https://git-scm.com/docs/git-show" target="_blank">git show</a></p>
+<h2 id="vim-plugins">vim plugins</h2>
+<h3 id="fugitivevim">fugitive.vim</h3>
+<p><a href="https://github.com/tpope/vim-fugitive" target="_blank">fugitive.vim</a> is a nice git wrapper of vim.<br>You can use <a href="https://github.com/tpope/vim-pathogen" target="_blank">pathogen.vim</a> or <a href="https://github.com/VundleVim/Vundle.vim" target="_blank">Vundle.vim
+</a> to install it.<br>See chapter Practice, <em>how to use vim&amp;git to find which software versions contain 
+the code of a specific line</em>.</p>
+<p><div class="plugin-dot"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: graphname Pages: 1 -->
+<svg width="134pt" height="188pt" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>graphname</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-184 130,-184 130,4 -4,4"/>
+<!-- a -->
+<g id="node1" class="node"><title>a</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-158.3" font-family="Times,serif" font-size="14.00">a</text>
+</g>
+<!-- b -->
+<g id="node2" class="node"><title>b</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-86.3" font-family="Times,serif" font-size="14.00">b</text>
+</g>
+<!-- a&#45;&#45;b -->
+<g id="edge1" class="edge"><title>a--b</title>
+<path fill="none" stroke="black" d="M63,-143.697C63,-132.846 63,-118.917 63,-108.104"/>
+</g>
+<!-- c -->
+<g id="node3" class="node"><title>c</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">c</text>
+</g>
+<!-- b&#45;&#45;c -->
+<g id="edge2" class="edge"><title>b--c</title>
+<path fill="none" stroke="black" d="M54.6504,-72.7646C48.8345,-61.456 41.1103,-46.4367 35.3043,-35.1473"/>
+</g>
+<!-- d -->
+<g id="node4" class="node"><title>d</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-14.3" font-family="Times,serif" font-size="14.00">d</text>
+</g>
+<!-- b&#45;&#45;d -->
+<g id="edge3" class="edge"><title>b--d</title>
+<path fill="none" stroke="black" d="M71.3496,-72.7646C77.1655,-61.456 84.8897,-46.4367 90.6957,-35.1473"/>
+</g>
+</g>
+</svg>
+</div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="how-build-libvirt.html" class="navigation navigation-next " aria-label="Next page: How to Build Libvirt">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"What is Libvirt","level":"1.2","depth":1,"next":{"title":"How to Build Libvirt","level":"1.3","depth":1,"path":"how-build-libvirt.md","ref":"./how-build-libvirt.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.x.x","theme":"default","variables":{},"plugins":["dot","page-treeview"],"pluginsConfig":{"dot":{"args":["-x"],"bin":"/usr/bin/dot"},"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"what-is-libvirt.md","mtime":"2019-07-31T09:57:07.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-31T09:58:07.901Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
